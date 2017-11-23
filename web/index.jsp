@@ -15,6 +15,9 @@
         <form action="servletLogin">
             <input type="text" name="Username" value="" />
             <input type="text" name="Password" value="" />
+            <input type="submit" value="Log in" name="LogIn" />
         </form>
+        
+        <p>${sessionScope.username}</p>
     </body>
 </html>
