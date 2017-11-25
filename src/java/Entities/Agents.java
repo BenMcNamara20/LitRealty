@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Agents.findByPhone", query = "SELECT a FROM Agents a WHERE a.phone = :phone")
     , @NamedQuery(name = "Agents.findByFax", query = "SELECT a FROM Agents a WHERE a.fax = :fax")
     , @NamedQuery(name = "Agents.findByEmail", query = "SELECT a FROM Agents a WHERE a.email = :email")
+    , @NamedQuery(name="Agents.getImageName", query = "SELECT a.agentId FROM agents")
     , @NamedQuery(name = "Agents.findByUsername", query = "SELECT a FROM Agents a WHERE a.username = :username")})
 public class Agents implements Serializable {
 

@@ -17,9 +17,9 @@ public class agentsDB {
      public static boolean Login(String Username , String Password){
          try{
          EntityManager emf = DButil.getEmf().createEntityManager();
-         TypedQuery test =emf.createNamedQuery("Agents.findByUsername", Agents.class);
-         test.setParameter("username", Username);
-         Agents agentUser=(Agents)test.getSingleResult();
+         TypedQuery usernameQuery =emf.createNamedQuery("Agents.findByUsername", Agents.class);
+         usernameQuery.setParameter("username", Username);
+         Agents agentUser=(Agents)usernameQuery.getSingleResult();
          if(agentUser.getPassword().equals(Password)){
              return true;
          }
@@ -31,4 +31,8 @@ public class agentsDB {
              return false;
          }
     }
+     public static String getImg(String Username){
+         EntityManager emf = DButil.getEmf().createEntityManager();
+         TypedQuery getImage = emf.createNamedQuery(Username, resultClass)
+     }
 }
