@@ -16,10 +16,10 @@ import javax.persistence.TypedQuery;
 public class agentsDB {
      public static boolean Login(String Username , String Password){
          try{
-         EntityManager emf = DButil.getEmf().createEntityManager();
+         EntityManager emf =DButil.getEmf().createEntityManager();
          TypedQuery usernameQuery =emf.createNamedQuery("Agents.findByUsername", Agents.class);
          usernameQuery.setParameter("username", Username);
-         Agents agentUser=(Agents)usernameQuery.getSingleResult();
+         Agents agentUser=(Agents) usernameQuery.getSingleResult();
          if(agentUser.getPassword().equals(Password)){
              return true;
          }
@@ -31,8 +31,11 @@ public class agentsDB {
              return false;
          }
     }
-     public static String getImg(String Username){
+     public static int getImg(String Username){
          EntityManager emf = DButil.getEmf().createEntityManager();
-         TypedQuery getImage = emf.createNamedQuery(Username, resultClass)
+         TypedQuery getImage = emf.createNamedQuery("Agents.findByUsername", Agents.class);
+         getImage.setParameter("username", Username);
+         Agents AgentImage=(Agents)getImage.getSingleResult();
+         return AgentImage.getAgentId();
      }
 }

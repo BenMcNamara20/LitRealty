@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>GRACES PROJECT IS A SOFTWARE DISASTER !!!!!!!</h1>
+        <h1>LOGGED IN</h1>
         
         <a href="index.jsp"> Home </a>
     </body>

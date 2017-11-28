@@ -5,6 +5,7 @@
  */
 package DBpackage;
 
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -13,7 +14,11 @@ import javax.persistence.Persistence;
  * @author benmc
  */
 public class DButil {
-        private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("RealtyPU");
+
+    /**
+     *
+     */
+    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("RealtyPUFix");
 public static EntityManagerFactory getEmf(){
 return emf;
 }

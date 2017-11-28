@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>GRACE IS A CUNT!!!!!!</h1>
+        <h1>FAILED LOGIN</h1>
+        <a href="index.jsp">HOME</a>
     </body>
 </html>

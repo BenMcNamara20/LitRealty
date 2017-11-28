@@ -37,7 +37,9 @@ public class servletLogin extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 if(agentsDB.Login(request.getParameter("Username"), request.getParameter("Password"))){
     request.getSession().setAttribute("username", request.getParameter("Username"));
-    request.getRequestDispatcher("/LoggedIn.jsp").forward(request, response);
+    agentsDB.getImg(request.getParameter("Username"));
+    request.getSession().setAttribute("image",agentsDB.getImg(request.getParameter("Username")));
+    request.getRequestDispatcher("/index.jsp").forward(request, response);
     
 }
 else{

@@ -4,6 +4,7 @@
     Author     : benmc
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,12 +13,18 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <c:if test="${sessionScope.username != NULL}">
+            <img src="images/agents/${sessionScope.image}.jpg"
+        </c:if>
         <form action="servletLogin">
             <input type="text" name="Username" value="" />
             <input type="text" name="Password" value="" />
             <input type="submit" value="Log in" name="LogIn" />
         </form>
+        <a href="logoutServlet"> Log out </a>
         
-        <p>${sessionScope.username}</p>
+        
+
+        
     </body>
 </html>
