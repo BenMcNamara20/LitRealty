@@ -13,15 +13,27 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <c:if test="${sessionScope.username != NULL}">
-            <img src="images/agents/${sessionScope.image}.jpg"
-        </c:if>
-        <form action="servletLogin">
+        <c:choose>
+        <c:when test="${sessionScope.username != NULL}">
+            <img src="images/agents/${sessionScope.image}.jpg"/>
+            </br>
+            <p>${sessionScope.username}</p>
+
+            <a href="logoutServlet"> Log out </a>
+            </br>
+            <a href="PropertyOptions.jsp">Property Options</a>
+        </c:when>
+        <c:otherwise>
+            <form action="servletLogin" name="loginform">
             <input type="text" name="Username" value="" />
             <input type="text" name="Password" value="" />
             <input type="submit" value="Log in" name="LogIn" />
         </form>
-        <a href="logoutServlet"> Log out </a>
+        </c:otherwise>
+        </c:choose>
+        
+        
+        
         
         
 
