@@ -15,7 +15,7 @@
     <body>
         <c:choose>
         <c:when test="${sessionScope.username != NULL}">
-            <img src="images/agents/${sessionScope.image}.jpg"/>
+            <img src="images/agents/${sessionScope.IDnum}.jpg"/>
             </br>
             <p>${sessionScope.username}</p>
 

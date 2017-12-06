@@ -6,21 +6,24 @@
 package Servlets;
 
 import DBpackage.agentsDB;
+import DBpackage.propertiesDB;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.eclipse.persistence.sessions.Session;
 
 /**
  *
  * @author benmc
  */
-@WebServlet(name = "servletLogin", urlPatterns = {"/servletLogin"})
-public class servletLogin extends HttpServlet {
+@WebServlet(name = "viewPropertyServlet", urlPatterns = {"/viewPropertyServlet"})
+public class viewPropertyServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +38,13 @@ public class servletLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-if(agentsDB.Login(request.getParameter("Username"), request.getParameter("Password"))){
-    request.getSession().setAttribute("username", request.getParameter("Username"));
-    agentsDB.getID(request.getParameter("Username"));
-    request.getSession().setAttribute("IDnum",agentsDB.getID(request.getParameter("Username")));
-    request.getRequestDispatcher("/index.jsp").forward(request, response);
-    
-}
-else{
-    request.getRequestDispatcher("/FailLogin.jsp").forward(request, response);
-}
-
+            long test1=Files.list(Paths.get("C:\\Users\\benmc\\Documents\\NetBeansProjects\\Realty\\web\\images\\properties\\large\\128365")).count();
+            int ID= agentsDB.getID(request.getParameter("username"));
+            request.setAttribute("PropertyList", propertiesDB.getPropByAgentID(ID));
+            
+            
+            
+            
         }
     }
 

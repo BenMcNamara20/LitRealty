@@ -13,5 +13,6 @@
     </head>
     <body>
         <a href="addPropertyForm.jsp">Add a property</a>
+        <a href="viewPropertyServlet">View Propertys</a>
     </body>
 </html>

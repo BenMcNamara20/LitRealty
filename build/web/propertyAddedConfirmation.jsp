@@ -14,5 +14,6 @@
     <body>
         <h1>Property has been added</h1>
         <a href="index.jsp">Home</a>
+        
     </body>
 </html>

@@ -49,13 +49,13 @@ public class addPropertyServlet extends HttpServlet {
             int garageTypeID=garageTypeDB.getGTypeID(request.getParameter("garageType"));
             int propTypeID=propertyTypeDB.getTypeID(request.getParameter("propertyType"));
             Properties newProp=new Properties();
-            int agentId=Integer.parseInt((String) request.getSession().getAttribute("image"));
+            int agentId=Integer.parseInt(request.getSession().getAttribute("image").toString());
             newProp.setAgentId(agentId);
             float bathrooms=Float.parseFloat(request.getParameter("bathrooms"));
             newProp.setBathrooms(bathrooms);
             int bedrooms=Integer.parseInt(request.getParameter("bedrooms"));
             newProp.setBedrooms(bedrooms);
-            newProp.setBerRating(request.getParameter("berRating"));
+            newProp.setBerRating(request.getParameter("BERrating"));
             newProp.setCity(request.getParameter("City"));
             DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
             Date date1 = df.parse(request.getParameter("Date"));

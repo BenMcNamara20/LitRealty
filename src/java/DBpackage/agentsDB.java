@@ -31,7 +31,7 @@ public class agentsDB {
              return false;
          }
     }
-     public static int getImg(String Username){
+     public static int getID(String Username){
          EntityManager emf = DButil.getEmf().createEntityManager();
          TypedQuery getImage = emf.createNamedQuery("Agents.findByUsername", Agents.class);
          getImage.setParameter("username", Username);

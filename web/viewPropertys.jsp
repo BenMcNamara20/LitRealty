@@ -1,6 +1,6 @@
 <%-- 
-    Document   : propertyAddedConfirmation
-    Created on : 30-Nov-2017, 09:40:29
+    Document   : viewPropertys
+    Created on : 04-Dec-2017, 12:18:22
     Author     : benmc
 --%>
 
@@ -12,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Property has been added</h1>
-        <a href="index.jsp">Home</a>
         
     </body>
 </html>

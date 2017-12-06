@@ -51,8 +51,23 @@
             <label>Square Feet</label>
             <input type="text" name="sqaureFeet" value="" />
             </br>
-            <label>BER Rating</label>
-            <input type="text" name="berRating" value="" />
+            <select name="BERrating">
+                <option>A1</option>
+                <option>A2</option>
+                <option>A3</option>
+                <option>B1</option>
+                <option>B2</option>
+                <option>B3</option>
+                <option>C1</option>
+                <option>C2</option>
+                <option>C3</option>
+                <option>D1</option>
+                <option>D2</option>
+                <option>E1</option>
+                <option>E2</option>
+                <option>F</option>
+                <option>G</option>
+            </select>
             </br>
             <label>Description</label>
             <textarea name="Description" rows="4" cols="20">
