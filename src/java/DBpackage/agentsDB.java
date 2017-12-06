@@ -33,9 +33,10 @@ public class agentsDB {
     }
      public static int getID(String Username){
          EntityManager emf = DButil.getEmf().createEntityManager();
-         TypedQuery getImage = emf.createNamedQuery("Agents.findByUsername", Agents.class);
+         TypedQuery getImage = emf.createNamedQuery("Agents.getAgentID", Agents.class);
          getImage.setParameter("username", Username);
-         Agents AgentImage=(Agents)getImage.getSingleResult();
-         return AgentImage.getAgentId();
+         System.out.println(Username);
+         int AgentImage=(int)getImage.getSingleResult();
+         return AgentImage;
      }
 }

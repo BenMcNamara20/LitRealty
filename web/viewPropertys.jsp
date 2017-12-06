@@ -4,6 +4,7 @@
     Author     : benmc
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <p>
+            <c:forEach items="${PropertyList}" var="items">
+                ${items}
+            </c:forEach>
+        </p>
     </body>
 </html>

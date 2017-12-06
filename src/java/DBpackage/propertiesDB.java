@@ -7,6 +7,7 @@ package DBpackage;
 
 import Entities.Properties;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -22,11 +23,12 @@ public class propertiesDB {
         em.getTransaction().commit();
         
     }
-    public static ArrayList getPropByAgentID(int ID){
+    public static List getPropByAgentID(int ID){
         EntityManager em = DButil.getEmf().createEntityManager();
         TypedQuery tq = em.createNamedQuery("Properties.findByAgentId", Properties.class);
         tq.setParameter("agentId", ID);
-        ArrayList propertyList=(ArrayList) tq.getResultList();
+        List propertyList=(List) tq.getResultList();
+        
         return propertyList;
         
         

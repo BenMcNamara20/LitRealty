@@ -38,9 +38,11 @@ public class viewPropertyServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            long test1=Files.list(Paths.get("C:\\Users\\benmc\\Documents\\NetBeansProjects\\Realty\\web\\images\\properties\\large\\128365")).count();
-            int ID= agentsDB.getID(request.getParameter("username"));
+            long test1=Files.list(Paths.get("C:\\Users\\benmc\\Documents\\NetBeansProjects\\LitRealty\\web\\images\\properties\\large\\128365")).count();
+            
+            int ID= agentsDB.getID((String)request.getSession().getAttribute("username"));
             request.setAttribute("PropertyList", propertiesDB.getPropByAgentID(ID));
+            request.getRequestDispatcher("/viewPropertys.jsp").forward(request, response);
             
             
             

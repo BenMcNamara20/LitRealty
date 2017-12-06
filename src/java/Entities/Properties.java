@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Properties.findByLotsize", query = "SELECT p FROM Properties p WHERE p.lotsize = :lotsize")
     , @NamedQuery(name = "Properties.findByGaragesize", query = "SELECT p FROM Properties p WHERE p.garagesize = :garagesize")
     , @NamedQuery(name = "Properties.findByGarageId", query = "SELECT p FROM Properties p WHERE p.garageId = :garageId")
-    , @NamedQuery(name = "Properties.findByAgentId", query = "SELECT p FROM Properties p WHERE p.agentId = :agentId")
+    , @NamedQuery(name = "Properties.findByAgentId", query = "SELECT p.street FROM Properties p WHERE p.agentId = :agentId")
     , @NamedQuery(name = "Properties.findByPhoto", query = "SELECT p FROM Properties p WHERE p.photo = :photo")
     , @NamedQuery(name = "Properties.findByPrice", query = "SELECT p FROM Properties p WHERE p.price = :price")
     , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
